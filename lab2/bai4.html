@@ -17,13 +17,7 @@
         thuNgay.splice(0, 0, "Mon");
         thuNgay.splice(2, 0, "Wed");
         thuNgay.splice(4, 0, "Fri");
-        thuNgay.push("Sun");
-
-        // Xóa phần tử "Nine" trong mảng
-        let index = thuNgay.indexOf("Nine");
-        if (index !== -1) {
-            thuNgay.splice(index, 1);
-        }
+        thuNgay.splice(6, 1, "Sun");
 
         // In mảng kết quả
         console.log('Xuat chuoi ngay trong tuan: ' + thuNgay);
