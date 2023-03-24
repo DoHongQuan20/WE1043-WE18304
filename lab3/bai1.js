@@ -41,31 +41,24 @@
       // Kiểm tra tính hợp lệ của các điểm
       if (toan >= 0 && toan <= 10 && ly >= 0 && ly <= 10 && hoa >= 0 && hoa <= 10 && sinh >= 0 && sinh <= 10) {
           // Tính điểm trung bình 4 môn
-          let diemTb = (toan + ly + hoa + sinh) / 4;
-          let xepLoai;
+          let diemTb2 = (toan + ly + hoa + sinh) / 4;
+          let xepLoai2;
 
-          switch (diemTb) {
-              case 10:
-              case 9:
-                  xepLoai = "Giỏi";
+          switch (true) {
+              case (diemTb2 >= 9 && diemTb2 <= 10):
+                  xepLoai2 = "Giỏi";
                   break;
-              case 8:
-              case 7:
-                  xepLoai = "Khá";
+              case (diemTb2 >= 7):
+                  xepLoai2 = "Khá";
                   break;
-              case 6:
-              case 5:
-                  xepLoai = "TB";
+              case (diemTb2 >= 5):
+                  xepLoai2 = "Trung bình";
                   break;
-              case 4:
-              case 3:
-              case 2:
-              case 1:
-                  xepLoai = "Yếu"
-                  break;
+              default:
+                  xepLoai2 = "Yếu";
           }
 
-          console.log(`Điểm trung bình: ${diemTb.toFixed(2)}, Xếp loại: ${xepLoai}`);
+          console.log(`Điểm trung bình: ${diemTb2.toFixed(1)}, Xếp loại: ${xepLoai2}`);
       } else {
           console.log('Điểm không hợp lệ, xin vui lòng kiểm tra và nhập lại!');
       }
