@@ -1,51 +1,19 @@
-let operand1 = "";
-let operand2 = "";
-let opt;
+var x = "";
 
-function buttonHandler(btn) {
-    const pressedValue = btn.innerText;
-    const resultInput = document.getElementById("resultInput");
-
-    if (isNaN(pressedValue)) {
-        if (pressedValue == "AC") {
-            operand1 = "";
-            operand2 = "";
-            opt = undefined;
-            resultInput.value = "";
-            return;
-        }
-        if (pressedValue == "=") {
-            const result = perform(operand1, operand2, opt);
-            resultInput.value = result;
-            operand1 = "";
-            operand2 = "";
-            opt = undefined;
-        } else {
-            opt = pressedValue;
-        }
-    } else {
-        if (opt) {
-            operand2 += pressedValue;
-            resultInput.value = operand2;
-        } else {
-            operand1 += pressedValue;
-            resultInput.value = operand1;
-        }
-    }
+function a(id) {
+    return document.getElementById(id);
 }
 
-function perform(orand1, orand2, otor) {
-    orand1 = Number(orand1);
-    orand2 = Number(orand2);
+function nhap(num) {
+    x += num;
+    a('phantu').value = x;
+}
 
-    switch (otor) {
-        case "+":
-            return orand1 + orand2;
-        case "-":
-            return orand1 - orand2;
-        case "*":
-            return orand1 * orand2;
-        case "/":
-            return orand1 / orand2;
-    }
+function xoa() {
+    x = "";
+    a("phantu").value = x;
+}
+
+function dapan1() {
+    a('phantu').value = eval(a('phantu').value);
 }
