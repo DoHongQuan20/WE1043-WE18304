@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <div class="slider">
+        <div class="slides">
+            <div class="slide">
+                <img src="https://img.meta.com.vn/Data/image/2022/01/13/anh-dep-thien-nhien-3.jpg" width="70%" height="800px">
+                <div class="caption"> 1/3</div>
+            </div>
+            <div class="slide">
+                <img src="https://www.invert.vn/media/uploads/uploads/2022/12/03143748-12-hinh-anh-dep.jpeg" width="70%" height="800px">
+                <div class="caption"> 2/3</div>
+            </div>
+            <div class="slide">
+                <img src="https://upanh123.com/wp-content/uploads/2020/10/hinh-anh-dep-nhat-the-gioi7.jpg" width="70%" height="800px">
+                <div class="caption">3/3</div>
+            </div>
+        </div>
+        <div class="dots"><span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span></div>
+        <a class="prev" onclick="prevSlide()">&#10094;</a>
+        <a class="next" onclick="nextSlide()">&#10095;</a>
+    </div>
+</body>
+<script>
+    var slideIndex = 0;
+
+    function showSlides() {
+        var i;
+        var slides = document.getElementsByClassName("slide");
+        var dots = document.getElementsByClassName("dot");
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        slideIndex++;
+        if (slideIndex > slides.length) {
+            slideIndex = 1
+        }
+        for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex - 1].style.display = "block";
+        dots[slideIndex - 1].className += " active";
+    }
+    // gọi hàm showSlides() mỗi 3 giây
+    setInterval(showSlides, 1000);
+</script>
+
+</html>
