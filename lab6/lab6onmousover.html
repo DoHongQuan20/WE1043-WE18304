@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .background {
+            background-color: antiquewhite;
+            width: 500px;
+            height: 500px;
+            margin: auto;
+        }
+        
+        h1 {
+            text-align: center;
+            margin: 20px;
+        }
+        
+        #image {
+            border: 1px solid black;
+            transition: transform 0.2s ease-in-out, border 0.2s ease-in-out;
+            margin: 100px;
+        }
+        
+        #image:hover {
+            transform: scale(1.1);
+            border: 3px solid red;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="background">
+        <h1>Hiệu ứng onmouseover</h1>
+        <img src="https://tiengdong.com/wp-content/uploads/www_tiengdong_com-video-10-diem-tiktok.jpg" id="image" alt="Image" width="300px" onmouseover="bigImg(this)" onmouseout="normalImg(this)">
+    </div>
+    <script>
+        function bigImg(x) {
+            x.style.width = "350px";
+        }
+
+        function normalImg(x) {
+            x.style.width = "300px";
+        }
+    </script>
+</body>
+
+</html>
