@@ -1,28 +1,28 @@
-// set the date we're counting down to
-var countDownDate = new Date("April 10 2023 00:00:00").getTime();
+// tạo biến countdow clock và thiết lập thời gian đém ngược
+var countDownDate = new Date("April 20 2023 00:00:00").getTime();
 
-// update the count down every 1 second
+// cập nhật đếm ngược cứ sau 1 giây
 var x = setInterval(function() {
 
-    // get current date and time
+    // lấy ngày giờ hiện tại
     var now = new Date().getTime();
 
-    // calculate the distance between now and the count down date
+    // tính khoảng cách từ bây giờ đến ngày đếm ngược
     var distance = countDownDate - now;
 
-    // calculate days, hours, minutes, and seconds
+    // tính toán ngày, giờ, phút và giây
     var days = Math.floor(distance / (1000 * 60 * 60 * 24));
     var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
     var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
     var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-    // display the result in the HTML
+    // hiển thị kết quả trong HTML
     document.getElementById("days").innerHTML = days + "d ";
     document.getElementById("hours").innerHTML = hours + "h ";
     document.getElementById("minutes").innerHTML = minutes + "m ";
     document.getElementById("seconds").innerHTML = seconds + "s ";
 
-    // if the count down is finished, display "EXPIRED" and clear the interval
+    // nếu đếm ngược kết thúc, hiển thị "EXPIRED" và xóa khoảng thời gian
     if (distance < 0) {
         clearInterval(x);
         document.getElementById("days").innerHTML = "0d ";

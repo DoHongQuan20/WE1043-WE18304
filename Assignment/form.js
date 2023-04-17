@@ -23,11 +23,15 @@ form.addEventListener("submit", function(event) {
     }
 
     // Kiểm tra số điện thoại
-    if (phoneInput.validity.patternMismatch) {
-        alert = "<p id='error'>Số điện thoại không hợp lệ.</p>";
-        phoneInput.focus();
-        return;
+    var phonePattern = /^(\([0-9]{3}\) |[0-9]{3}-)[0-9]{3}-[0-9]{4}/;
+    var phone = phoneInput.match(phonePattern);
+    if (phone) {
+        alert('yes');
+        return true;
     }
+    alert = "<p id='error'>Số điện thoại không hợp lệ.</p>";
+    return false;
+
 
     // Nếu tất cả đều đúng, hiển thị thông báo gửi thành công
     resultDiv.innerHTML = "<p>Gửi thành công!</p>";

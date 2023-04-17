@@ -12,12 +12,13 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlp
     fuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <script src="./app.js"></script>
-    <script src="./onmousever.js"></script>
+    <script src="app.js"></script>
+    <script src="onmousever.js"></script>
     <script src="form.js"></script>
 </head>
 
 <body>
+
     <!-- page container -->
     <div id="container">
         <!-- header -->
@@ -48,9 +49,8 @@
                 </a>
                 </span>
                 <span class="home">
-                    <a href="">
-                    <b>HỆ THỐNG</b>
-                        </a>
+                    
+                    <a href="#" id="cart-btn"><b>GIỎ HÀNG</b> (<span id="cart-count">0</span>)</a>
                 </span>
                 <span class="home">
                     <a href="#formdien">
@@ -125,21 +125,26 @@
         </div>
         <!-- our services -->
         <article>
+
             <div class="service" id="sanpham">
                 <div class="service-row">
                     <div class="column">
-                        <div class="sanpham" style="margin-left: 10px;">
-                            <div class="Ten"><b>Đồng hồ Bregus A43</b></div>
-                            <img src="./img2/images.jpg" alt=""><br><br>
-                            <div class="Gia">
-                                <del>7.200.000VND </del><br>5.499.000VND
+                        <div class="products">
+                            <div class="sanpham" style="margin-left: 10px;">
+                                <div class="Ten"><b>Đồng hồ Bregus A43</b></div>
+                                <img src="./img2/images.jpg" alt="" width="210" onmouseover="bigImg(this)" onmouseout="normalImg(this)"><br><br>
+                                <div class="Gia">
+                                    <del>7.200.000VND </del><br>5.499.000VND
+                                </div>
+
                             </div>
                         </div>
+
                     </div>
                     <div class="column">
                         <div class="sanpham">
                             <div class="Ten"><b>Đồng hồ Bently C143</b> </div>
-                            <img src="./img2/dh2.jpg" alt=""><br><br>
+                            <img src="./img2/dh2.jpg" alt="" width="210" onmouseover="bigImg(this)" onmouseout="normalImg(this)"><br><br>
                             <div class="Gia">
                                 <del>$10.899.000VND </del>9.990.000VND
                             </div>
@@ -148,7 +153,7 @@
                     <div class="column">
                         <div class="sanpham">
                             <div class="Ten"><b>Đồng hồ CASIO B09</b> </div>
-                            <img src="./img2/dh3.jpg" alt=""><br><br>
+                            <img src="./img2/dh3.jpg" alt="" onmouseover="bigImg(this)" onmouseout="normalImg(this)"><br><br>
                             <div class="Gia">
                                 <del>15.000.000VND </del>13.459.000VND
                             </div>
@@ -157,7 +162,7 @@
                     <div class="column">
                         <div class="sanpham" style="margin-left: 10px;">
                             <div class="Ten"><b>Đồng hồ CITYEN A62</b></div>
-                            <img src="./img2/dh4.jpg" alt="" width="250px"><br>
+                            <img src="./img2/dh4.jpg" alt="" width="250px" onmouseover="bigImg(this)" onmouseout="normalImg(this)"><br>
                             <div class="Gia">
                                 <del>17.990.000VND</del><br>14.990.000VND
                             </div>
@@ -166,18 +171,19 @@
                     <div class="column">
                         <div class="sanpham" style="margin-left: 10px;">
                             <div class="Ten"><b>Đồng hồ BREGUET 104</b></div>
-                            <img src="./img2/dh5.jpg" alt="" width="230px"><br><br>
+                            <img src="./img2/dh5.jpg" alt="" width="230px" onmouseover="bigImg(this)" onmouseout="normalImg(this)"><br><br>
                             <div class="Gia">
                                 <del>15.990.000VND</del><br>11.990.000VND
                             </div>
                         </div>
+
                     </div>
                 </div>
                 <div class="service-row">
                     <div class="column">
                         <div class="sanpham">
                             <div class="Ten"><b>Đồng hồ ROLEX DateJust</b></div>
-                            <img src="./img2/dh6.jpg" alt=""><br><br>
+                            <img src="./img2/dh6.jpg" alt="" onmouseover="bigImg(this)" onmouseout="normalImg(this)"><br><br>
                             <div class="Gia">
                                 <del>19.800.000VND </del> 16.499.000VND
                             </div>
@@ -186,7 +192,7 @@
                     <div class="column">
                         <div class="sanpham">
                             <div class="Ten"><b>Đồng hồ SRWATCH Dragon</b> </div>
-                            <img src="./img2/dhh.jpeg" width="230px"><br><br>
+                            <img src="./img2/dhh.jpeg" width="230px" onmouseover="bigImg(this)" onmouseout="normalImg(this)"><br><br>
                             <div class="Gia">
                                 <del>$15.899.000VND </del>12.990.000VND
                             </div>
@@ -195,7 +201,7 @@
                     <div class="column">
                         <div class="sanpham" style="margin-left: 10px;">
                             <div class="Ten"><b>Đồng hồ AOLIX C69</b> </div>
-                            <img src="./img2/dhn.jpg" alt="" width="230"><br><br>
+                            <img src="./img2/dhn.jpg" alt="" width="230" onmouseover="bigImg(this)" onmouseout="normalImg(this)"><br><br>
                             <div class="Gia">
                                 <del>8.990.000VND </del><br>7.459.000VND
                             </div>
@@ -204,7 +210,7 @@
                     <div class="column">
                         <div class="sanpham" style="margin-left: 10px;">
                             <div class="Ten"><b>Đồng hồ BUBERY 68</b></div>
-                            <img src="./img2/DHC.jpg" alt="" width="250"><br>
+                            <img src="./img2/DHC.jpg" alt="" width="250" onmouseover="bigImg(this)" onmouseout="normalImg(this)"><br>
                             <div class="Gia">
                                 <del>17.990.000VND</del><br>14.990.000VND
                             </div>
@@ -213,14 +219,15 @@
                     <div class="column">
                         <div class="sanpham" style="margin-left: 10px;">
                             <div class="Ten"><b>Đồng hồ CITIZEN 104</b></div>
-                            <img src="./img2/dh9.jpg" alt="" width="230" onmouseover="bigImg(this)" onmouseout="normalImg(this)"><br><br>
+                            <img src="./img2/dh9.jpg" alt="" width="220" onmouseover="bigImg(this)" onmouseout="normalImg(this)"><br><br>
                             <div class="Gia">
                                 <del>15.990.000VND</del><br>11.990.000VND
                             </div>
                         </div>
                     </div>
-                </div>
 
+                </div>
+                </ul>
                 <nav id="phantrang">
                     <span class="paging_div">
                     <span class="span_select_class" rel="nofollow">1</span>
