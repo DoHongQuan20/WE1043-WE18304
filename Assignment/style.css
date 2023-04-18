@@ -384,7 +384,7 @@ footer a {
     justify-content: center;
     align-items: center;
     text-decoration: none;
-    transition: all 0.3s ease-in-out;
+    transition: all 0.8s ease-in-out;
 }
 
 .back-to-top:hover {
@@ -395,51 +395,4 @@ footer a {
 .fa-arrow-up {
     color: white;
     font-size: 24px;
-}
-
-
-/* giỏ hàng */
-
-.cart {
-    border: 1px solid gray;
-    padding: 10px;
-    width: 30%;
-    margin: auto;
-}
-
-.cart h2 {
-    margin-top: 0;
-}
-
-.cart p {
-    font-size: 18px;
-}
-
-.cart button {
-    background-color: #4CAF50;
-    color: white;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    font-size: 16px;
-    cursor: pointer;
-}
-
-.products {
-    list-style: none;
-    padding: 0;
-}
-
-.products li {
-    margin-bottom: 10px;
-}
-
-.products li button {
-    background-color: #4CAF50;
-    color: white;
-    padding: 5px;
-    border: none;
-    border-radius: 3px;
-    font-size: 14px;
-    cursor: pointer;
 }

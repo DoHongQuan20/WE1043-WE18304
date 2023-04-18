@@ -1,41 +1,48 @@
-//querySelector`: đây là một hàm cho phép chúng ta chọn một phần tử trong HTML DOM và trả về phần tử đó.
-const slide = document.querySelector(".slides");
-const prevBtn = document.querySelector(".prev-btn");
-const nextBtn = document.querySelector(".next-btn");
-let counter = 0;
-const size = slide.children[0].clientWidth;
-/*`addEventListener`: hàm này cho phép chúng ta lắng nghe các sự kiện trên một phần tử nhất định. 
-Chúng ta có sử dụng sự kiện `click` để bắt sự kiện khi người dùng bấm vào nút "previous" hoặc "next".*/
-nextBtn.addEventListener("click", () => {
-    if (counter >= slide.children.length - 1) return;
-    slide.style.transition = "transform 0.5s ease";
-    counter++;
-    slide.style.transform = "translateX(" + (-size * counter) + "px)";
-});
+let slideIndex = 1;
+// Hiển thị slideshow bắt đầu từ slide đầu tiên.
+showSlides(slideIndex);
 
-prevBtn.addEventListener("click", () => {
-    if (counter <= 0) return;
-    slide.style.transition = "transform 0.5s ease";
-    counter--;
-    slide.style.transform = "translateX(" + (-size * counter) + "px)";
-});
+// Hàm plusSlides(n) được sử dụng để di chuyển slide tương đối.
+function plusSlides(n) {
 
-slide.addEventListener("transitionend", () => {
-    if (slide.children[counter].id === "last-clone") {
-        slide.style.transition = "none";
-        counter = slide.children.length - 2;
-        slide.style.transform = "translateX(" + (-size * counter) + "px)";
+    showSlides(slideIndex += n);
+}
+
+// Hàm currentSlide(n) được sử dụng để hiển thị slide được chỉ định.
+function currentSlide(n) {
+    showSlides(slideIndex = n);
+}
+
+// Hàm showSlides(n) được sử dụng để hiển thị slide.
+function showSlides(n) {
+    let i;
+    let slides = document.getElementsByClassName("mySlides");
+    let dots = document.getElementsByClassName("dot");
+
+    // Nếu slideIndex lớn hơn số lượng slide, đặt slideIndex về 1.
+    if (n > slides.length) {
+        slideIndex = 1;
     }
 
-    if (slide.children[counter].id === "first-clone") {
-        slide.style.transition = "none";
-        counter = slide.children.length - counter;
-        slide.style.transform = "translateX(" + (-size * counter) + "px)";
+    // Nếu slideIndex nhỏ hơn 1, đặt slideIndex bằng số cuối cùng trong slide.
+    if (n < 1) {
+        slideIndex = slides.length;
     }
-});
-/*`style.transition`: thuộc tính này cho phép bạn thêm hiệu ứng chuyển động vào phần tử HTML bằng cách chỉ định 
- thời gian và đường dẫn chuyển động. Ở đây, chúng ta sử dụng nó để thêm hiệu ứng chuyển động khi trượt ảnh.
-`style.transform`: thuộc tính này cho phép chúng ta thay đổi vị trí của phần tử HTML
-. Chúng ta sử dụng nó để di chuyển slider sang trái hoặc phải.
-`transitionend`: sự kiện này được bắt sự kiện khi hoàn thành một hiệu ứng chuyển động cho phần tử HTML.
- Chúng ta sử dụng sự kiện này để xử lý khi slider đã đến cuối cùng hoặc đầu tiên. */
+
+
+    // Ẩn tất cả các slide.
+    for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+    }
+
+    // Xóa lớp "active" khỏi tất cả các chấm.
+    for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+    }
+
+    // Hiển thị slide hiện tại bằng cách đặt "display" thành "block".
+    slides[slideIndex - 1].style.display = "block";
+
+    // Thêm lớp "active" vào chấm hiện tại để chỉ định slide đang hiển thị.
+    dots[slideIndex - 1].className += " active";
+}
