@@ -10,15 +10,14 @@ form.addEventListener("submit", function(event) {
     // Kiểm tra tên
     if (nameInput.value.trim() === "") {
         alert = "<p id='error'>Vui lòng nhập tên của bạn.</p>";
-        nameInput.focus();
         return;
     }
 
     // Kiểm tra email
     var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailPattern.test(emailInput.value)) {
+    var email = emailInput.match(emailPattern);
+    if (email) {
         alert = "<p id='error'>Email không hợp lệ.</p>";
-        emailInput.focus();
         return;
     }
 
@@ -26,12 +25,9 @@ form.addEventListener("submit", function(event) {
     var phonePattern = /^(\([0-9]{3}\) |[0-9]{3}-)[0-9]{3}-[0-9]{4}/;
     var phone = phoneInput.match(phonePattern);
     if (phone) {
-        alert('yes');
-        return true;
+        alert = "<p id='error'>Số điện thoại không hợp lệ.</p>";
+        return;
     }
-    alert = "<p id='error'>Số điện thoại không hợp lệ.</p>";
-    return false;
-
 
     // Nếu tất cả đều đúng, hiển thị thông báo gửi thành công
     resultDiv.innerHTML = "<p>Gửi thành công!</p>";
