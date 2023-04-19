@@ -1,5 +1,5 @@
 // tạo biến countdow clock và thiết lập thời gian đém ngược
-var countDownDate = new Date("April 20 2023 00:00:00").getTime();
+var countDownDate = new Date("April 21 2023 00:00:00").getTime();
 
 // cập nhật đếm ngược cứ sau 1 giây
 var x = setInterval(function() {
