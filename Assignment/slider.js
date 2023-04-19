@@ -1,10 +1,8 @@
 let slideIndex = 1;
-// Hiển thị slideshow bắt đầu từ slide đầu tiên.
 showSlides(slideIndex);
 
 // Hàm plusSlides(n) được sử dụng để di chuyển slide tương đối.
 function plusSlides(n) {
-
     showSlides(slideIndex += n);
 }
 
@@ -45,4 +43,5 @@ function showSlides(n) {
 
     // Thêm lớp "active" vào chấm hiện tại để chỉ định slide đang hiển thị.
     dots[slideIndex - 1].className += " active";
+    setTimeout(showSlides, 3000);
 }

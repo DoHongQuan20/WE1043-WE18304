@@ -22,7 +22,7 @@ form.addEventListener("submit", function(event) {
     }
 
     // Kiểm tra số điện thoại
-    var phonePattern = /^(\([0-9]{3}\) |[0-9]{3}-)[0-9]{3}-[0-9]{4}/;
+    var phonePattern = /^[0-9]{3}-)[0-9]{3}-[0-9]{4}/;
     var phone = phoneInput.match(phonePattern);
     if (phone) {
         alert = "<p id='error'>Số điện thoại không hợp lệ.</p>";
